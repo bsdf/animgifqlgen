@@ -48,7 +48,7 @@
 OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview, CFURLRef url, CFStringRef contentTypeUTI, CFDictionaryRef options)
 {
     NSAutoreleasePool *pool;
-    NSMutableString *html;
+    NSString *html;
 	NSMutableDictionary *props;
 	
     pool = [[NSAutoreleasePool alloc] init];
@@ -83,10 +83,6 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
 				// Grab out the size of the image representation -- we'll tell QuickLook to
 				// make this the default size for the window.
 				NSSize size = NSMakeSize ([rep pixelsWide], [rep pixelsHigh]);
-
-				// Just a buffer between image and quicklook frame window
-//				size.width += 30;
-//				size.height += 30;
 				
 				// Before proceeding make sure the user didn't cancel the request
 				if (QLPreviewRequestIsCancelled(preview))
@@ -96,24 +92,54 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
 				
 				// Create a temporary HTML page that holds the GIF image.
 				NSString *urlString = [(NSURL *)url absoluteString];
-				props=[[[NSMutableDictionary alloc] init] autorelease];
+                
+                props=[[[NSMutableDictionary alloc] init] autorelease];
+                       
 				[props setObject:@"UTF-8" forKey:(NSString *)kQLPreviewPropertyTextEncodingNameKey];
 				[props setObject:@"text/html" forKey:(NSString *)kQLPreviewPropertyMIMETypeKey];
 				[props setObject:[NSNumber numberWithFloat:(size.width)] forKey:(NSString *)kQLPreviewPropertyWidthKey];
 				[props setObject:[NSNumber numberWithFloat:(size.height)] forKey:(NSString *)kQLPreviewPropertyHeightKey];
-				html=[[[NSMutableString alloc] init] autorelease];
                 
-                if (size.height > size.width) {
-                    [html appendString:@"<html><body bgcolor='Black'><center><img scalefit='1' style='position: absolute; top: 0; right: 0; bottom: 0; left: 0; height:100%; margin: auto;' "];
-                } else {
-                    [html appendString:@"<html><body bgcolor='Black'><center><img scalefit='1' style='position: absolute; top: 0; right: 0; bottom: 0; left: 0; width:100%; margin: auto;' "];
+                NSError *error = nil;
+                
+                CFBundleRef bundle = QLPreviewRequestGetGeneratorBundle(preview);
+                CFURLRef url = CFBundleCopyResourceURL(bundle,
+                                                       CFSTR("img"),
+                                                       CFSTR("html"),
+                                                       NULL);
+
+                html = [NSString stringWithContentsOfURL:(NSURL *)url
+                                                encoding:NSUTF8StringEncoding 
+                                                   error:&error];
+                
+                if (error)
+                {
+                    html = [NSString stringWithString:[error localizedDescription]];
+                }
+                else 
+                {
+                    html = [html stringByReplacingOccurrencesOfString:@"%%bgcolor%%"
+                                                           withString:@"black"];
+                    
+                    html = [html stringByReplacingOccurrencesOfString:@"%%imageurl%%"
+                                                           withString:urlString];
+                    
+                    if (size.height > size.width) 
+                    {
+                        html = [html stringByReplacingOccurrencesOfString:@"%%heightorwidth%%" 
+                                                               withString:@"height: 100%;"];
+                    } 
+                    else 
+                    {
+                        html = [html stringByReplacingOccurrencesOfString:@"%%heightorwidth%%" 
+                                                               withString:@"width: 100%;"];
+                    }
                 }
                 
-				[html appendFormat:@" src='%@' >", urlString];
-				[html appendString:@"</img></center></body></html>"];
-                
-				QLPreviewRequestSetDataRepresentation(preview,(CFDataRef)[html dataUsingEncoding:NSUTF8StringEncoding],kUTTypeHTML,(CFDictionaryRef)props);
-				
+				QLPreviewRequestSetDataRepresentation(preview, 
+                                                      (CFDataRef)[html dataUsingEncoding:NSUTF8StringEncoding],
+                                                      kUTTypeHTML,
+                                                      (CFDictionaryRef)props);
 			}
 		}
 	}

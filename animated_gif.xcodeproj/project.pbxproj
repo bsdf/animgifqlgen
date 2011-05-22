@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		23963D2F10378C6000DED44E /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23963D2E10378C6000DED44E /* Foundation.framework */; };
 		23963E081037998700DED44E /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 23963E071037998700DED44E /* Cocoa.framework */; };
 		23DC223B1040A64900CEFE45 /* panda.gif in Resources */ = {isa = PBXBuildFile; fileRef = 23DC223A1040A64900CEFE45 /* panda.gif */; };
 		23DC22481040A65600CEFE45 /* AnimatedGIF_QL.README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 23DC22421040A65600CEFE45 /* AnimatedGIF_QL.README.rtf */; };
@@ -25,7 +24,6 @@
 		089C167EFE841241C02AAC07 /* English */ = {isa = PBXFileReference; fileEncoding = 10; lastKnownFileType = text.plist.strings; name = English; path = English.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		08FB77B6FE84183AC02AAC07 /* main.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = main.c; sourceTree = "<group>"; };
 		0AA1909FFE8422F4C02AAC07 /* CoreFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreFoundation.framework; path = /System/Library/Frameworks/CoreFoundation.framework; sourceTree = "<absolute>"; };
-		23963D2E10378C6000DED44E /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		23963E071037998700DED44E /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = /System/Library/Frameworks/Cocoa.framework; sourceTree = "<absolute>"; };
 		23DC223A1040A64900CEFE45 /* panda.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = panda.gif; sourceTree = "<group>"; };
 		23DC22421040A65600CEFE45 /* AnimatedGIF_QL.README.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = AnimatedGIF_QL.README.rtf; sourceTree = "<group>"; };
@@ -47,7 +45,6 @@
 				C86B05270671AA6E00DD9006 /* CoreServices.framework in Frameworks */,
 				F28CFBFD0A3EC0AF000ABFF5 /* ApplicationServices.framework in Frameworks */,
 				F28CFC030A3EC0C6000ABFF5 /* QuickLook.framework in Frameworks */,
-				23963D2F10378C6000DED44E /* Foundation.framework in Frameworks */,
 				23963E081037998700DED44E /* Cocoa.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -66,13 +63,13 @@
 			);
 			name = AnimatedGIF_QL;
 			sourceTree = "<group>";
+			wrapsLines = 0;
 		};
 		089C1671FE841209C02AAC07 /* External Frameworks and Libraries */ = {
 			isa = PBXGroup;
 			children = (
 				23963E071037998700DED44E /* Cocoa.framework */,
 				0AA1909FFE8422F4C02AAC07 /* CoreFoundation.framework */,
-				23963D2E10378C6000DED44E /* Foundation.framework */,
 				F28CFC020A3EC0C6000ABFF5 /* QuickLook.framework */,
 				F28CFBFC0A3EC0AF000ABFF5 /* ApplicationServices.framework */,
 				C86B05260671AA6E00DD9006 /* CoreServices.framework */,
@@ -129,9 +126,9 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		8D57630D048677EA00EA77CD /* AnimatedGIF_QL */ = {
+		8D57630D048677EA00EA77CD /* animated_gif */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 2CA3261E0896AD4900168862 /* Build configuration list for PBXNativeTarget "AnimatedGIF_QL" */;
+			buildConfigurationList = 2CA3261E0896AD4900168862 /* Build configuration list for PBXNativeTarget "animated_gif" */;
 			buildPhases = (
 				8D57630E048677EA00EA77CD /* Headers */,
 				8D57630F048677EA00EA77CD /* Resources */,
@@ -143,7 +140,7 @@
 			);
 			dependencies = (
 			);
-			name = AnimatedGIF_QL;
+			name = animated_gif;
 			productInstallPath = /Library/QuickLook;
 			productName = AnimatedGIF_QL;
 			productReference = 8D576316048677EA00EA77CD /* AnimatedGIF_QL.qlgenerator */;
@@ -154,7 +151,7 @@
 /* Begin PBXProject section */
 		089C1669FE841209C02AAC07 /* Project object */ = {
 			isa = PBXProject;
-			buildConfigurationList = 2CA326220896AD4900168862 /* Build configuration list for PBXProject "AnimatedGIF_QL" */;
+			buildConfigurationList = 2CA326220896AD4900168862 /* Build configuration list for PBXProject "animated_gif" */;
 			compatibilityVersion = "Xcode 3.1";
 			developmentRegion = English;
 			hasScannedForEncodings = 1;
@@ -165,7 +162,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				8D57630D048677EA00EA77CD /* AnimatedGIF_QL */,
+				8D57630D048677EA00EA77CD /* animated_gif */,
 			);
 		};
 /* End PBXProject section */
@@ -229,7 +226,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Library/QuickLook;
-				PRODUCT_NAME = AnimatedGIF_QL;
+				PRODUCT_NAME = animated_gif;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = qlgenerator;
 			};
@@ -243,7 +240,7 @@
 				GCC_PRECOMPILE_PREFIX_HEADER = NO;
 				INFOPLIST_FILE = Info.plist;
 				INSTALL_PATH = /Library/QuickLook;
-				PRODUCT_NAME = AnimatedGIF_QL;
+				PRODUCT_NAME = animated_gif;
 				SDKROOT = macosx;
 				WRAPPER_EXTENSION = qlgenerator;
 			};
@@ -257,7 +254,7 @@
 				GCC_VERSION = "";
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				ONLY_ACTIVE_ARCH = YES;
 				PREBINDING = NO;
 				SDKROOT = macosx10.5;
@@ -271,7 +268,7 @@
 				GCC_C_LANGUAGE_STANDARD = c99;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				MACOSX_DEPLOYMENT_TARGET = 10.6;
+				MACOSX_DEPLOYMENT_TARGET = 10.5;
 				PREBINDING = NO;
 				SDKROOT = macosx10.5;
 			};
@@ -280,7 +277,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		2CA3261E0896AD4900168862 /* Build configuration list for PBXNativeTarget "AnimatedGIF_QL" */ = {
+		2CA3261E0896AD4900168862 /* Build configuration list for PBXNativeTarget "animated_gif" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CA3261F0896AD4900168862 /* Debug */,
@@ -289,7 +286,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		2CA326220896AD4900168862 /* Build configuration list for PBXProject "AnimatedGIF_QL" */ = {
+		2CA326220896AD4900168862 /* Build configuration list for PBXProject "animated_gif" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				2CA326230896AD4900168862 /* Debug */,

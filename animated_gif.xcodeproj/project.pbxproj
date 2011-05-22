@@ -12,6 +12,7 @@
 		23DC22481040A65600CEFE45 /* AnimatedGIF_QL.README.rtf in Resources */ = {isa = PBXBuildFile; fileRef = 23DC22421040A65600CEFE45 /* AnimatedGIF_QL.README.rtf */; };
 		2C05A19C06CAA52B00D84F6F /* GeneratePreviewForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 2C05A19B06CAA52B00D84F6F /* GeneratePreviewForURL.m */; };
 		61E3BCFB0870B4F2002186A0 /* GenerateThumbnailForURL.m in Sources */ = {isa = PBXBuildFile; fileRef = 61E3BCFA0870B4F2002186A0 /* GenerateThumbnailForURL.m */; };
+		634336181389AE7F00F60492 /* img.html in Resources */ = {isa = PBXBuildFile; fileRef = 634336171389AE7F00F60492 /* img.html */; };
 		8D576312048677EA00EA77CD /* main.c in Sources */ = {isa = PBXBuildFile; fileRef = 08FB77B6FE84183AC02AAC07 /* main.c */; settings = {ATTRIBUTES = (); }; };
 		8D576314048677EA00EA77CD /* CoreFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 0AA1909FFE8422F4C02AAC07 /* CoreFoundation.framework */; };
 		8D5B49A804867FD3000E48DA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = 8D5B49A704867FD3000E48DA /* InfoPlist.strings */; };
@@ -29,7 +30,8 @@
 		23DC22421040A65600CEFE45 /* AnimatedGIF_QL.README.rtf */ = {isa = PBXFileReference; lastKnownFileType = text.rtf; path = AnimatedGIF_QL.README.rtf; sourceTree = "<group>"; };
 		2C05A19B06CAA52B00D84F6F /* GeneratePreviewForURL.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = GeneratePreviewForURL.m; sourceTree = "<group>"; };
 		61E3BCFA0870B4F2002186A0 /* GenerateThumbnailForURL.m */ = {isa = PBXFileReference; fileEncoding = 30; lastKnownFileType = sourcecode.c.objc; path = GenerateThumbnailForURL.m; sourceTree = "<group>"; };
-		8D576316048677EA00EA77CD /* AnimatedGIF_QL.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = AnimatedGIF_QL.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
+		634336171389AE7F00F60492 /* img.html */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.html; path = img.html; sourceTree = "<group>"; };
+		8D576316048677EA00EA77CD /* animated_gif.qlgenerator */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = animated_gif.qlgenerator; sourceTree = BUILT_PRODUCTS_DIR; };
 		8D576317048677EA00EA77CD /* Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
 		C86B05260671AA6E00DD9006 /* CoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreServices.framework; path = /System/Library/Frameworks/CoreServices.framework; sourceTree = "<absolute>"; };
 		F28CFBFC0A3EC0AF000ABFF5 /* ApplicationServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = ApplicationServices.framework; path = /System/Library/Frameworks/ApplicationServices.framework; sourceTree = "<absolute>"; };
@@ -99,7 +101,7 @@
 		19C28FB6FE9D52B211CA2CBB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				8D576316048677EA00EA77CD /* AnimatedGIF_QL.qlgenerator */,
+				8D576316048677EA00EA77CD /* animated_gif.qlgenerator */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -108,6 +110,7 @@
 			isa = PBXGroup;
 			children = (
 				23DC22421040A65600CEFE45 /* AnimatedGIF_QL.README.rtf */,
+				634336171389AE7F00F60492 /* img.html */,
 				23DC223A1040A64900CEFE45 /* panda.gif */,
 			);
 			name = Other;
@@ -143,7 +146,7 @@
 			name = animated_gif;
 			productInstallPath = /Library/QuickLook;
 			productName = AnimatedGIF_QL;
-			productReference = 8D576316048677EA00EA77CD /* AnimatedGIF_QL.qlgenerator */;
+			productReference = 8D576316048677EA00EA77CD /* animated_gif.qlgenerator */;
 			productType = "com.apple.product-type.bundle";
 		};
 /* End PBXNativeTarget section */
@@ -175,6 +178,7 @@
 				8D5B49A804867FD3000E48DA /* InfoPlist.strings in Resources */,
 				23DC223B1040A64900CEFE45 /* panda.gif in Resources */,
 				23DC22481040A65600CEFE45 /* AnimatedGIF_QL.README.rtf in Resources */,
+				634336181389AE7F00F60492 /* img.html in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

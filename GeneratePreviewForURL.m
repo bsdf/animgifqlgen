@@ -124,15 +124,15 @@ OSStatus GeneratePreviewForURL(void *thisInterface, QLPreviewRequestRef preview,
                     html = [html stringByReplacingOccurrencesOfString:@"%%imageurl%%"
                                                            withString:urlString];
                     
-                    if (size.height > size.width) 
-                    {
-                        html = [html stringByReplacingOccurrencesOfString:@"%%heightorwidth%%" 
-                                                               withString:@"height: 100%;"];
-                    } 
-                    else 
+                    if (size.height < size.width) 
                     {
                         html = [html stringByReplacingOccurrencesOfString:@"%%heightorwidth%%" 
                                                                withString:@"width: 100%;"];
+                    }
+                    else
+                    {
+                        html = [html stringByReplacingOccurrencesOfString:@"%%heightorwidth%%" 
+                                                               withString:@"height: 100%;"];
                     }
                 }
                 

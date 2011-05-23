@@ -1,4 +1,14 @@
-the original animgifqlgen (http://animgifqlgen.sourceforge.net/) had a problem where it would always resize the image based upon the height. the problem with this is that when width > height, the quicklook window would show a horizontal scrollbar (which sucked).
+
+       _/_/_/    _/_/_/_/    _/_/    _/_/_/    _/      _/  _/_/_/_/
+      _/    _/  _/        _/    _/  _/    _/  _/_/  _/_/  _/
+     _/_/_/    _/_/_/    _/_/_/_/  _/    _/  _/  _/  _/  _/_/_/
+    _/    _/  _/        _/    _/  _/    _/  _/      _/  _/
+   _/    _/  _/_/_/_/  _/    _/  _/_/_/    _/      _/  _/_/_/_/
+
+   the original animgifqlgen (http://animgifqlgen.sourceforge.net/)
+had a problem where it would always resize the image based upon the
+height. the problem with this is that when width > height, the
+quicklook window would show a horizontal scrollbar (which sucked).
 
 installation
 ------------

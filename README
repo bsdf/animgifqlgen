@@ -14,3 +14,5 @@ installation
 ------------
 $ mv animated_gif.qlgenerator ~/Library/QuickLook
 $ qlmanage -r
+
+TEST
